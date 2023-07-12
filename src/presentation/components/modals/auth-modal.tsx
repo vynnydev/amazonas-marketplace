@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useCallback, useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { IoMdClose } from 'react-icons/io'
 
 import Button from '@/presentation/components/ui/button'
 
-interface ModalProps {
+interface IAuthModalProps {
   isOpen?: boolean
   onClose: () => void
   onSubmit: () => void
@@ -18,7 +19,7 @@ interface ModalProps {
   secondaryActionLabel?: string
 }
 
-const Modal: React.FC<ModalProps> = ({
+const AuthModal: React.FC<IAuthModalProps> = ({
   isOpen,
   onClose,
   onSubmit,
@@ -31,6 +32,7 @@ const Modal: React.FC<ModalProps> = ({
   secondaryActionLabel,
 }) => {
   const [showModal, setShowModal] = useState(isOpen)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setShowModal(isOpen)
@@ -121,10 +123,13 @@ const Modal: React.FC<ModalProps> = ({
               flex 
               flex-col 
               w-full 
-              bg-white 
               outline-none 
               focus:outline-none
             "
+              style={{
+                backgroundColor:
+                  resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+              }}
             >
               {/* header */}
               <div
@@ -190,4 +195,4 @@ const Modal: React.FC<ModalProps> = ({
   )
 }
 
-export default Modal
+export default AuthModal

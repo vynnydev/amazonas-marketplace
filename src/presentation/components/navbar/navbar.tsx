@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { useTheme } from 'next-themes'
 
 // import MainNav from '@/presentation/components/navbar/main-nav'
@@ -13,7 +12,6 @@ import Logo from './logo'
 
 const Navbar = () => {
   const { resolvedTheme } = useTheme()
-  console.log(localStorage.getItem('resolvedTheme'))
 
   return (
     <div

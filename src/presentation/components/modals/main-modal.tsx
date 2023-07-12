@@ -1,6 +1,6 @@
 'use client'
-
 import React, { useCallback, useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import { IoMdClose } from 'react-icons/io'
 
 import Button from '@/presentation/components/ui/button'
@@ -31,6 +31,7 @@ const MainModal: React.FC<IMainModalProps> = ({
   secondaryActionLabel,
 }) => {
   const [showMainModal, setShowMainModal] = useState(isOpen)
+  const { resolvedTheme } = useTheme()
 
   useEffect(() => {
     setShowMainModal(isOpen)
@@ -121,10 +122,13 @@ const MainModal: React.FC<IMainModalProps> = ({
               flex 
               flex-col 
               w-full 
-              bg-white 
               outline-none 
               focus:outline-none
             "
+              style={{
+                backgroundColor:
+                  resolvedTheme === 'dark' ? '#020817' : '#ffffff',
+              }}
             >
               {/* header */}
               <div

@@ -11,8 +11,8 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import useLoginModal from '@/presentation/hooks/use-login-modal'
 import useRegisterModal from '@/presentation/hooks/use-register-modal'
 
-import Modal from './log-modal'
-import Input from '../inputs/input'
+import AuthModal from './auth-modal'
+import Input from '@/presentation/components/inputs/input'
 import Heading from '../heading'
 import Button from '@/presentation/components/ui/button'
 
@@ -58,7 +58,7 @@ const RegisterModal = () => {
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
-      <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+      <Heading title="Welcome to Amazonas" subtitle="Create an account!" />
       <Input
         id="email"
         label="Email"
@@ -129,7 +129,7 @@ const RegisterModal = () => {
   )
 
   return (
-    <Modal
+    <AuthModal
       disabled={isLoading}
       isOpen={registerModal.isOpen}
       title="Register"

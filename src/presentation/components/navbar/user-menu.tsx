@@ -1,5 +1,6 @@
 'use client'
 import React, { useCallback, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 import { AiOutlineMenu } from 'react-icons/ai'
 import { signOut } from 'next-auth/react'
@@ -18,6 +19,7 @@ interface UserMenuProps {
 
 const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const router = useRouter()
+  const { resolvedTheme } = useTheme()
 
   const loginModal = useLoginModal()
   const registerModal = useRegisterModal()
@@ -58,17 +60,19 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
       {isOpen && (
         <div
           className="
-            absolute 
-            rounded-xl 
-            shadow-md
-            w-[40vw]
-            md:w-3/4 
-            bg-white 
-            overflow-hidden 
-            right-0
-            top-12 
-            text-sm
+          absolute 
+          rounded-xl 
+          shadow-md
+          w-[10vw]
+          bg-white 
+          overflow-hidden 
+          right-0 
+          top-12 
+          text-sm
           "
+          style={{
+            backgroundColor: resolvedTheme === 'dark' ? '#000000' : '#ffffff',
+          }}
         >
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (

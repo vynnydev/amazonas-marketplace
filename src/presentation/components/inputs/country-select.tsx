@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useTheme } from 'next-themes'
 
 import Select from 'react-select'
 
@@ -21,6 +22,7 @@ interface CountrySelectProps {
 
 const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
   const { getAll } = useCountries()
+  const { resolvedTheme } = useTheme()
 
   return (
     <div>
@@ -34,6 +36,9 @@ const CountrySelect: React.FC<CountrySelectProps> = ({ value, onChange }) => {
           <div
             className="
           flex flex-row items-center gap-3"
+            style={{
+              color: resolvedTheme === 'dark' ? '#000000' : '#000000',
+            }}
           >
             <div>{option.flag}</div>
             <div>

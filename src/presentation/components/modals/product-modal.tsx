@@ -1,5 +1,6 @@
 'use client'
 import React, { Fragment } from 'react'
+import { useTheme } from 'next-themes'
 
 import { Dialog, Transition } from '@headlessui/react'
 import { X } from 'lucide-react'
@@ -13,6 +14,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  const { resolvedTheme } = useTheme()
+
   return (
     <Transition show={isOpen} appear as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={onClose}>
@@ -30,9 +33,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel className="w-full max-w-3xl overflow-hidden rounded-lg text-left align-middle">
-                <div className="relative flex w-full items-center overflow-hidden bg-white px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+                <div
+                  className="relative flex w-full items-center overflow-hidden px-4 pb-8 pt-14 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8"
+                  style={{
+                    backgroundColor:
+                      resolvedTheme === 'dark' ? '#000000' : '#ffffff',
+                  }}
+                >
                   <div className="absolute right-4 top-4">
-                    <IconButton onClick={onClose} icon={<X size={15} />} />
+                    <IconButton
+                      onClick={onClose}
+                      icon={<X size={15} color="black" />}
+                    />
                   </div>
                   {children}
                 </div>

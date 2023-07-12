@@ -1,99 +1,102 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
+import { GiClothes } from 'react-icons/gi'
 import {
-  GiBarn,
-  GiBoatFishing,
-  GiCactus,
-  GiCastle,
-  GiCaveEntrance,
-  GiForestCamp,
-  GiIsland,
-  GiWindmill,
-} from 'react-icons/gi'
-import { FaSkiing } from 'react-icons/fa'
-import { BsSnow } from 'react-icons/bs'
-import { IoDiamond } from 'react-icons/io5'
-import { MdOutlineVilla } from 'react-icons/md'
+  PiTelevisionSimple,
+  PiHandbagSimpleLight,
+  PiOfficeChairLight,
+} from 'react-icons/pi'
+import { TbToolsKitchen2 } from 'react-icons/tb'
+import { CgGames } from 'react-icons/cg'
+import { BsPhone, BsFillJournalBookmarkFill, BsTools } from 'react-icons/bs'
+import { BiMoviePlay } from 'react-icons/bi'
+
+import {
+  MdComputer,
+  MdOutlineToys,
+  MdOutlineHomeWork,
+  MdOutlineSportsSoccer,
+  MdPets,
+} from 'react-icons/md'
 
 import NavCategoryBox from '@/presentation/components/ui/nav-category-box'
 import Container from '@/presentation/components/ui/container'
 
 export const categories = [
   {
-    label: 'Beach',
-    icon: TbBeach,
+    label: 'Clothing & Footwear',
+    icon: GiClothes,
     description: 'This property is close to the beach!',
   },
   {
-    label: 'Windmills',
-    icon: GiWindmill,
+    label: 'Eletronics & TV',
+    icon: PiTelevisionSimple,
     description: 'This property is has windmills!',
   },
   {
-    label: 'Modern',
-    icon: MdOutlineVilla,
+    label: 'Bags & Backpacks',
+    icon: PiHandbagSimpleLight,
     description: 'This property is modern!',
   },
   {
-    label: 'Countryside',
-    icon: TbMountain,
+    label: 'Computers & Informatic',
+    icon: MdComputer,
     description: 'This property is in the countryside!',
   },
   {
-    label: 'Pools',
-    icon: TbPool,
+    label: 'Games & Console',
+    icon: CgGames,
     description: 'This is property has a beautiful pool!',
   },
   {
-    label: 'Islands',
-    icon: GiIsland,
+    label: 'Cell Phones',
+    icon: BsPhone,
     description: 'This property is on an island!',
   },
   {
-    label: 'Lake',
-    icon: GiBoatFishing,
+    label: 'Movies & Series',
+    icon: BiMoviePlay,
     description: 'This property is near a lake!',
   },
   {
-    label: 'Skiing',
-    icon: FaSkiing,
+    label: 'Books',
+    icon: BsFillJournalBookmarkFill,
     description: 'This property has skiing activies!',
   },
   {
-    label: 'Castles',
-    icon: GiCastle,
+    label: 'Toys & games',
+    icon: MdOutlineToys,
     description: 'This property is an ancient castle!',
   },
   {
-    label: 'Caves',
-    icon: GiCaveEntrance,
+    label: 'Home & Garden',
+    icon: MdOutlineHomeWork,
     description: 'This property is in a spooky cave!',
   },
   {
-    label: 'Camping',
-    icon: GiForestCamp,
+    label: 'Sport & Leisure',
+    icon: MdOutlineSportsSoccer,
     description: 'This property offers camping activities!',
   },
   {
-    label: 'Arctic',
-    icon: BsSnow,
+    label: 'Tools & Construction',
+    icon: BsTools,
     description: 'This property is in arctic environment!',
   },
   {
-    label: 'Desert',
-    icon: GiCactus,
+    label: 'Stationery & Office',
+    icon: PiOfficeChairLight,
     description: 'This property is in the desert!',
   },
   {
-    label: 'Barns',
-    icon: GiBarn,
+    label: 'Kitchen',
+    icon: TbToolsKitchen2,
     description: 'This property is in a barn!',
   },
   {
-    label: 'Lux',
-    icon: IoDiamond,
+    label: 'Pet Shop',
+    icon: MdPets,
     description: 'This property is brand new and luxurious!',
   },
 ]
